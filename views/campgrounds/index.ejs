@@ -1,0 +1,41 @@
+<%- include("../partials/header") %>
+<!-- ////////////////////////////////////////////////// -->
+
+
+<div class="container">
+    <header class="jumbotron text-center py-5 mb-5">
+        <h1 class="display-3 text-info pb-5"><i class="fas fa-campground"></i> YelpCamp</h1>
+        <p class="lead">You are handepict campgrounds from all over the world. Search through and find out your best campsites! Also you can eddit and add your favorite campgrounds.</p>
+        <hr class="my-4">
+        <p class="pb-4">Want to share you campgrounds with others?</p>
+        <a href="/campgrounds/new" class="btn btn-outline-info btn-lg">Add new Campground</a>
+      </header>
+
+            
+            <% campgrounds.forEach(function(campground){ %>
+                <div class="card mb-5" style="border: none">
+                    <div class="row no-gutters">
+                      <div class="col-md-6 d-flex align-items-center">
+                        <img src="<%= campground.image %>" class="card-img" alt="..." style="min-height: 300px;">
+                      </div>
+                      <div class="col-md-6">
+                        <div class="card-body pt-0">
+                            <hr>
+                            <h2 class="card-title mb-5"><%= campground.name %></h2>
+                            <p class="card-text mb-3 pb-5"><%= campground.description %></p>
+                            <div class="d-flex justify-content-between align-items-end">
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <a href="/campgrounds/<%= campground._id %>" class="btn btn-outline-info">More Info!</a>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+            <% }); %>
+                
+
+</div>
+
+<!-- ////////////////////////////////////////////////// -->
+<%- include("../partials/footer") %>

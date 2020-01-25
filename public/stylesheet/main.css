@@ -1,0 +1,26 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.navbar-brand{
+    font-size: 23px !important;
+}
+
+.nav-link{
+    font-size: 19px !important;
+}
+
+.fab{
+    color: white !important;
+}
+
+footer{
+    padding-top: 100px;
+}
+
+i{
+    cursor: pointer;
+}
+ .campground-cards{
+     height: 400px;
+ }

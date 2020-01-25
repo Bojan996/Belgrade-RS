@@ -1,0 +1,70 @@
+<%- include("../partials/header") %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <p class="lead">YelpCamp</p>
+            <div class="list-group">
+                <li class="list-group-item">Info 1</li>
+                <li class="list-group-item">Info 2</li>
+                <li class="list-group-item">Info 3</li>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="card">
+                <img class="img-responsive" src="<%= campground.image %>" alt="">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-5">
+                            <h1 class="card-title display-4"><a href="#" style="text-decoration: none;"><%= campground.name %></a></h1>
+                            <h4>$<%= campground.price %>/night</h4>
+                        </div>
+                        <p><em>Submitted by:   <%= campground.author.username %></em></p>
+                        <p class="card-text mb-5"><%= campground.description %></p>
+
+                        <% if(currentUser && campground.author.id.equals(currentUser._id)){ %> 
+                            <div class="d-flex justify-content-start">
+                                <a href="/campgrounds/<%=campground._id%>/edit" class="btn btn-outline-warning mr-3">Edit </a>
+                                <form action="/campgrounds/<%=campground._id%>?_method=DELETE" method="POST">
+                                    <button class="btn btn-outline-danger">Delete</button>
+                                </form>
+                            </div>
+                        <% } %>
+                        
+                  </div>
+            </div>
+
+
+            <div class="card mt-5">
+                <div class="card-header d-flex justify-content-between">
+                    <a href="/campgrounds" class="btn btn-outline-primary">Go Back!</a>
+                    <a class="btn btn-success" href="/campgrounds/<%=campground._id%>/comments/new">Add New Comment</a>
+                </div>
+                    <div class="card-body">
+                <% campground.comments.forEach(function(comment){ %>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="d-flex justify-content-between">
+                                    <strong><%= comment.author.username %></strong>
+                                    <span>10 days ago</span>
+                                </div>
+                                <p><%= comment.text %></p>
+                                <% if(currentUser && comment.author.id.equals(currentUser._id)){ %> 
+                                <div class="d-flex justify-content-start">
+                                    <form action="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+                                    <button class="btn btn-outline-danger mr-3">DELETE</button>
+                                    </form>
+                                    <a href="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>/edit" class="btn btn-outline-warning">Edit</a>
+                                </div>
+                                <% } %>
+                            </div>
+                        </div>
+                        <hr>
+                        <% }); %>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include("../partials/footer") %>

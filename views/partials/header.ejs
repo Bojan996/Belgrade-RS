@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <script src="https://kit.fontawesome.com/c313318d1d.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheet/main.css">
+
+
+    <title>YelpCamp</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info mb-5">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/"><i class="fas fa-campground"></i> YelpCamp</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <% if(!currentUser){ %>
+                  <li class="nav-item">
+                    <a class="nav-link text-white pr-4" href="/login">Login <i class="fas fa-user ml-1"></i></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="/register">Sign Up <i class="fas fa-user-plus ml-1"></i></a>
+                  </li>
+                <% }else{ %>
+                  <li class="nav-item">
+                    <a class="nav-link text-white pr-4">Signed In As <%= currentUser.username %></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="/logout">Logout <i class="fas fa-sign-out-alt ml-1"></i></a>
+                  </li>
+                <% } %>
+              </ul>
+            </div>
+        </div>
+      </nav>
+      
+      <div class="container">
+        <% if(error && error.length > 0) { %>
+          <div class="alert alert-danger" role="alert">
+            <%= error %>
+          </div>
+        <% } %>
+        <% if(success && success.length > 0) { %>
+          <div class="alert alert-success" role="alert">
+            <%= success %>
+          </div>
+        <% } %>
+      </div>
+    
