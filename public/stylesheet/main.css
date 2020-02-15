@@ -1,5 +1,6 @@
 body{
     font-family: 'Open Sans', sans-serif;
+    margin-top: 135px;
 }
 
 .navbar-brand{
@@ -24,3 +25,21 @@ i{
  .campground-cards{
      height: 400px;
  }
+
+ .images-show {
+     height: 500px;
+ }
+
+ .container-show{
+     margin: auto 100px;
+ }
+
+ #header-icon {
+    font-size: 27px;
+    color: white;
+    transition: all .2s ease-in-out;
+  }
+
+  #header-icon:hover { 
+    transform: scale(1.2); 
+  }

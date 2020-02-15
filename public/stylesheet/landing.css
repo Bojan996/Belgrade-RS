@@ -13,7 +13,7 @@ body {
       0px 8px 13px rgba(0,0,0,0.1),
       0px 18px 23px rgba(0,0,0,0.1);
       color: #fff;
-      margin-top: 5%;
+      margin-top: 1%;
   }
 
   #landing-header p {
@@ -50,22 +50,22 @@ body {
   }
 
   .slideshow li:nth-child(1) { 
-    background-image: url(http://i.imgur.com/K3mPv14.jpg) 
+    background-image: url(https://i.pinimg.com/originals/cb/6c/a6/cb6ca62fa3316d42ea1e900baab32ec4.jpg);
   }
   .slideshow li:nth-child(2) { 
-    background-image: url(http://i.imgur.com/SBEmFpv.jpg);
+    background-image: url(https://cdn.wallpaper.com/main/2015/10/malamen-1.jpg);
     animation-delay: 10s; 
   }
   .slideshow li:nth-child(3) { 
-    background-image: url(http://i.imgur.com/emvhOnb.jpg);
+    background-image: url(https://bigseventravel.com/wp-content/uploads/2019/11/Art-Shadow.jpg);
     animation-delay: 20s; 
   }
   .slideshow li:nth-child(4) { 
-    background-image: url(http://i.imgur.com/2LSMCmJ.jpg);
+    background-image: url(https://www.willpursell.com/wp-content/uploads/2016/12/023-riverway-clubhouse-wedding.jpg);
     animation-delay: 30s; 
   }
   .slideshow li:nth-child(5) { 
-    background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
+    background-image: url(https://images.adsttc.com/media/images/538f/533b/c07a/803d/f400/0236/large_jpg/KiloDesign_LlamaRestaurant_07.jpg?1401901865);
     animation-delay: 40s; 
   }
 
@@ -84,4 +84,31 @@ body {
     30% {
       opacity: 0
     }
+  }
+
+  .landing-row {
+    margin-top: 235px;
+    margin-left: 80px;
+    margin-right: 80px;
+    
+  }
+
+  #heading-paragraph {
+    font-family: 'Lemonada', cursive;
+    font-weight: bold;
+  }
+
+  #heading {
+    font-family: 'Montserrat Subrayada', sans-serif;
+    font-weight: bold;
+  }
+
+  #landing-icon {
+    font-size: 90px;
+    color: white;
+    transition: all .2s ease-in-out;
+  }
+
+  #landing-icon:hover { 
+    transform: scale(1.1); 
   }

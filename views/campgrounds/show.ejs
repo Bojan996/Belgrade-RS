@@ -1,21 +1,56 @@
 <%- include("../partials/header") %>
 
-<div class="container">
+<div class="container-show">
     <div class="row">
-        <div class="col-md-3">
-            <p class="lead">YelpCamp</p>
-            <div class="list-group">
-                <li class="list-group-item">Info 1</li>
-                <li class="list-group-item">Info 2</li>
-                <li class="list-group-item">Info 3</li>
+        <div class="col-md-4">
+            <p class="lead">Other Restaurants</p>
+                    <div class="card mb-5" style="max-width: 540px; height: 100px;">
+                        <div class="row no-gutters">
+                          <div class="col-md-5">
+                            <img src="<%= campgrounds[0].image %>" class="card-img" alt="..." style="height: 99px;">
+                          </div>
+                          <div class="col-md-7">
+                            <div class="card-body pt-2">
+                              <h5 class="card-title"><a href="/campgrounds/<%= campgrounds[0].id %>" style="color: black"><%= campgrounds[0].name %></a></h5>
+                              <p class="card-text"><small class="text-muted">Last updated <%=  Math.floor(Math.random() * 59) %> minutes ago</small></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card mb-5" style="max-width: 540px; height: 100px;">
+                        <div class="row no-gutters">
+                          <div class="col-md-5">
+                            <img src="<%= campgrounds[1].image %>" class="card-img" alt="..." style="height: 99px;">
+                          </div>
+                          <div class="col-md-7">
+                            <div class="card-body pt-2">
+                              <h5 class="card-title"><a href="/campgrounds/<%= campgrounds[1].id %>" style="color: black"><%= campgrounds[1].name %></a></h5>
+                              <p class="card-text"><small class="text-muted">Last updated <%=  Math.floor(Math.random() * 59) %> minutes ago</small></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card mb-5" style="max-width: 540px; height: 100px;">
+                        <div class="row no-gutters">
+                          <div class="col-md-5">
+                            <img src="<%= campgrounds[2].image %>" class="card-img" alt="..." style="height: 99px;">
+                          </div>
+                          <div class="col-md-7">
+                            <div class="card-body pt-2">
+                              <h5 class="card-title"> <a href="/campgrounds/<%= campgrounds[2].id %>" style="color: black"><%= campgrounds[2].name %></a></h5>
+                              <p class="card-text"><small class="text-muted">Last updated <%=  Math.floor(Math.random() * 59) %> minutes ago</small></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
             </div>
-        </div>
-        <div class="col-md-9">
+
+        <div class="col-md-8">
             <div class="card">
-                <img class="img-responsive" src="<%= campground.image %>" alt="">
+                <img class="img-responsive images-show" src="<%= campground.image %>" alt="">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center mb-5">
-                            <h1 class="card-title display-4"><a href="#" style="text-decoration: none;"><%= campground.name %></a></h1>
+                            <h1 class="card-title display-4"><a href="#" style="text-decoration: none; color: black"><%= campground.name %></a></h1>
                             <h4>$<%= campground.price %>/night</h4>
                         </div>
                         <p><em>Submitted by:   <%= campground.author.username %></em></p>
@@ -35,8 +70,8 @@
 
 
             <div class="card mt-5">
-                <div class="card-header d-flex justify-content-between">
-                    <a href="/campgrounds" class="btn btn-outline-primary">Go Back!</a>
+                <div class="card-header d-flex justify-content-end">
+                    
                     <a class="btn btn-success" href="/campgrounds/<%=campground._id%>/comments/new">Add New Comment</a>
                 </div>
                     <div class="card-body">
@@ -45,7 +80,7 @@
                             <div class="col-md-12">
                                 <div class="d-flex justify-content-between">
                                     <strong><%= comment.author.username %></strong>
-                                    <span>10 days ago</span>
+                                    <span><%= Math.floor(Math.random() *60) %> days ago</span>
                                 </div>
                                 <p><%= comment.text %></p>
                                 <% if(currentUser && comment.author.id.equals(currentUser._id)){ %> 

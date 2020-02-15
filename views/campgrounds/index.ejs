@@ -4,11 +4,11 @@
 
 <div class="container">
     <header class="jumbotron text-center py-5 mb-5">
-        <h1 class="display-3 text-info pb-5"><i class="fas fa-campground"></i> YelpCamp</h1>
-        <p class="lead">You are handepict campgrounds from all over the world. Search through and find out your best campsites! Also you can eddit and add your favorite campgrounds.</p>
+        <h1 class="display-3 text-dark pb-5"><i class="fas fa-utensils pr-5"> </i>Belgrade Restaurants Official</h1>
+        <p class="lead">You are handepict restaurants from the city of Belgrade. Search through and find out your best restaurants! Also you can eddit and add your favorite places</p>
         <hr class="my-4">
-        <p class="pb-4">Want to share you campgrounds with others?</p>
-        <a href="/campgrounds/new" class="btn btn-outline-info btn-lg">Add new Campground</a>
+        <p class="pb-4">Want to share you restaurants with others?</p>
+        <a href="/campgrounds/new" class="btn btn-outline-dark btn-lg">Post Your Favorite Restaurant</a>
       </header>
 
             
@@ -16,15 +16,15 @@
                 <div class="card mb-5" style="border: none">
                     <div class="row no-gutters">
                       <div class="col-md-6 d-flex align-items-center">
-                        <img src="<%= campground.image %>" class="card-img" alt="..." style="min-height: 300px;">
+                        <img src="<%= campground.image %>" class="card-img " alt="..." style="height: 330px;">
                       </div>
                       <div class="col-md-6">
-                        <div class="card-body pt-0">
+                        <div class="card-body pt-0 pl-5" style="height: 370px; max-height: 370px;">
                             <hr>
-                            <h2 class="card-title mb-5"><%= campground.name %></h2>
+                            <h2 class="card-title mb-5 pt-4"><%= campground.name %></h2>
                             <p class="card-text mb-3 pb-5"><%= campground.description %></p>
                             <div class="d-flex justify-content-between align-items-end">
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <p class="card-text"><small class="text-muted">Last updated <%=  Math.floor(Math.random() * 59) %> minutes ago</small></p>
                                 <a href="/campgrounds/<%= campground._id %>" class="btn btn-outline-info">More Info!</a>
                             </div>
                         </div>
