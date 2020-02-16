@@ -1,57 +1,74 @@
 <%- include("../partials/header") %>
 
+
 <div class="container-show">
     <div class="row">
         <div class="col-md-4">
+          <div class="map-show">
+            <h2 class="display-4 pb-3">Map Location</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.7321346751005!2d20.42024871549808!3d44.80664737909867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a6ff382e6bcad%3A0x2976f2f80256155b!2sBoutique%20Trojka!5e0!3m2!1sen!2srs!4v1581808484561!5m2!1sen!2srs" frameborder="0" style="border:0;" allowfullscreen="" id="map-show"></iframe>
+          </div>
             <p class="lead">Other Restaurants</p>
-                    <div class="card mb-5" style="max-width: 540px; height: 100px;">
+                    <div class="card mb-5 left-cards-show" style="max-width: 540px; height: 100px;">
                         <div class="row no-gutters">
                           <div class="col-md-5">
-                            <img src="<%= campgrounds[0].image %>" class="card-img" alt="..." style="height: 99px;">
+                            <img src="<%= campgrounds[0].image %>" class="card-img left-cards-show" alt="..." style="height: 99px;">
                           </div>
                           <div class="col-md-7">
                             <div class="card-body pt-2">
-                              <h5 class="card-title"><a href="/campgrounds/<%= campgrounds[0].id %>" style="color: black"><%= campgrounds[0].name %></a></h5>
-                              <p class="card-text"><small class="text-muted">Last updated <%=  Math.floor(Math.random() * 59) %> minutes ago</small></p>
+                              <h5 class="card-title text-center"><%= campgrounds[0].name %></h5>
+                              <hr class="my-1">
+                              <div class="d-flex justify-content-between align-items-center">
+                                <p class="card-text pt-2"><span style="font-size: 17px;">Check it out</span></p>
+                                <a href="/campgrounds/<%= campgrounds[0].id %>" style="color: black"><i class="fas fa-arrow-right left-cards-icon-show"></i></a>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="card mb-5" style="max-width: 540px; height: 100px;">
+                      <div class="card mb-5 left-cards-show" style="max-width: 540px; height: 100px;">
                         <div class="row no-gutters">
                           <div class="col-md-5">
-                            <img src="<%= campgrounds[1].image %>" class="card-img" alt="..." style="height: 99px;">
+                            <img src="<%= campgrounds[1].image %>" class="card-img left-cards-show" alt="..." style="height: 99px;">
                           </div>
                           <div class="col-md-7">
                             <div class="card-body pt-2">
-                              <h5 class="card-title"><a href="/campgrounds/<%= campgrounds[1].id %>" style="color: black"><%= campgrounds[1].name %></a></h5>
-                              <p class="card-text"><small class="text-muted">Last updated <%=  Math.floor(Math.random() * 59) %> minutes ago</small></p>
+                              <h5 class="card-title"><%= campgrounds[1].name %></h5>
+                              <hr class="my-1">
+                              <div class="d-flex justify-content-between align-items-center">
+                                <p class="card-text pt-2"><span style="font-size: 17px;">Check it out</span></p>
+                                <a href="/campgrounds/<%= campgrounds[1].id %>" style="color: black"><i class="fas fa-arrow-right left-cards-icon-show"></i></a>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="card mb-5" style="max-width: 540px; height: 100px;">
+                      <div class="card mb-5 left-cards-show" style="max-width: 540px; height: 100px;">
                         <div class="row no-gutters">
                           <div class="col-md-5">
-                            <img src="<%= campgrounds[2].image %>" class="card-img" alt="..." style="height: 99px;">
+                            <img src="<%= campgrounds[2].image %>" class="card-img left-cards-show" alt="..." style="height: 99px;">
                           </div>
                           <div class="col-md-7">
                             <div class="card-body pt-2">
-                              <h5 class="card-title"> <a href="/campgrounds/<%= campgrounds[2].id %>" style="color: black"><%= campgrounds[2].name %></a></h5>
-                              <p class="card-text"><small class="text-muted">Last updated <%=  Math.floor(Math.random() * 59) %> minutes ago</small></p>
+                              <h5 class="card-title"><%= campgrounds[2].name %></h5>
+                              <hr class="my-1">
+                              <div class="d-flex justify-content-between align-items-center">
+                                <p class="card-text pt-2"><span style="font-size: 17px;">Check it out</span></p>
+                                <a href="/campgrounds/<%= campgrounds[2].id %>" style="color: black"><i class="fas fa-arrow-right left-cards-icon-show"></i></a>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
             </div>
-
-        <div class="col-md-8">
+            <div class="col-md-1"></div>
+        <div class="col-md-7 restaurant-content">
             <div class="card">
                 <img class="img-responsive images-show" src="<%= campground.image %>" alt="">
                     <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center mb-5">
+                        <div class="d-flex justify-content-between align-items-center mb-4 mt-3">
                             <h1 class="card-title display-4"><a href="#" style="text-decoration: none; color: black"><%= campground.name %></a></h1>
-                            <h4>$<%= campground.price %>/night</h4>
+                            <h4>$<%= campground.price %><span class="ml-2">reservation</span></h4>
                         </div>
                         <p><em>Submitted by:   <%= campground.author.username %></em></p>
                         <p class="card-text mb-5"><%= campground.description %></p>

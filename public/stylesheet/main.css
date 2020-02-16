@@ -1,6 +1,6 @@
 body{
     font-family: 'Open Sans', sans-serif;
-    margin-top: 135px;
+    margin-top: 110px;
 }
 
 .navbar-brand{
@@ -31,7 +31,7 @@ i{
  }
 
  .container-show{
-     margin: auto 100px;
+     margin: auto 50px;
  }
 
  #header-icon {
@@ -42,4 +42,47 @@ i{
 
   #header-icon:hover { 
     transform: scale(1.2); 
+  }
+
+  #map-show{
+      margin-bottom: 100px;
+      width: 500px; 
+      height: 400px;
+  }
+
+  @media (max-width: 992px) {
+    #header-icon{
+        display: none;
+    }
+}
+
+@media (max-width: 1295px) {
+    .images-show{
+        height: 300px;
+    }
+    #map-show{
+        width: 350px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    #map-show{
+        width: 600px;
+    }
+    .left-cards-show{
+        height: 300px !important;
+        padding-bottom: 30px !important;
+    }
+}
+
+.left-cards-icon-show {
+    font-size: 22px;
+    color: black;
+    transition: all .2s ease-in-out;
+  }
+
+.left-cards-icon-show:hover { 
+    transform: scale(1.2);
+    color: lightskyblue;
   }
