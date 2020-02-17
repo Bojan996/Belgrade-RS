@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router({mergeParams: true});
 var Campground = require("../models/campground");
 var middleware = require("../middleware");
+var random = require("../public/js/random");
 
 
 ////////// show all campgrounds ///////////
@@ -51,7 +52,7 @@ router.get("/:id", function(req, res){
         }else{
             // res.render("campgrounds/show", {campground:foundCampground});
             Campground.find({}, function(err, allCampgrounds){
-                res.render("campgrounds/show", {campgrounds:allCampgrounds, campground:foundCampground});
+                res.render("campgrounds/show", {campgrounds: random(allCampgrounds), campground:foundCampground, });
             });
         }
     });

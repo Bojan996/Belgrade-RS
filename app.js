@@ -1,4 +1,4 @@
-var express     = require("express"),
+var express = require("express"),
     port = process.env.PORT || 8080,
     app         = express(),
     mongoose    = require("mongoose"),
@@ -11,8 +11,6 @@ var express     = require("express"),
     seedDB = require("./seeds"),
     methodOverride = require("method-override"),
     flash = require("connect-flash");
-    
-    
 
 
 ////////// REQUERING ROUTES ///////////
