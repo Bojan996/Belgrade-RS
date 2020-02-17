@@ -86,3 +86,9 @@ i{
     transform: scale(1.2);
     color: lightskyblue;
   }
+
+  @media(max-width: 991px){
+      .cards-index{
+          margin-bottom: 120px !important;
+      }
+  }
