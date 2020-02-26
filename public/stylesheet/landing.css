@@ -47,7 +47,7 @@ body {
     background-repeat: no-repeat;
     opacity: 0;
     z-index: 0;
-    animation: imageAnimation 50s linear infinite; 
+    animation: imageAnimation 20s linear infinite; 
   }
 
   .slideshow li:nth-child(1) { 
@@ -55,19 +55,19 @@ body {
   }
   .slideshow li:nth-child(2) { 
     background-image: url(https://cdn.wallpaper.com/main/2015/10/malamen-1.jpg);
-    animation-delay: 10s; 
+    animation-delay: 4s; 
   }
   .slideshow li:nth-child(3) { 
     background-image: url(https://bigseventravel.com/wp-content/uploads/2019/11/Art-Shadow.jpg);
-    animation-delay: 20s; 
+    animation-delay: 8s; 
   }
   .slideshow li:nth-child(4) { 
     background-image: url(https://www.willpursell.com/wp-content/uploads/2016/12/023-riverway-clubhouse-wedding.jpg);
-    animation-delay: 30s; 
+    animation-delay: 12s; 
   }
   .slideshow li:nth-child(5) { 
     background-image: url(https://images.adsttc.com/media/images/538f/533b/c07a/803d/f400/0236/large_jpg/KiloDesign_LlamaRestaurant_07.jpg?1401901865);
-    animation-delay: 40s; 
+    animation-delay: 16s; 
   }
 
   @keyframes imageAnimation { 
@@ -105,11 +105,45 @@ body {
   }
 
   #landing-icon {
+    margin-left: 1000px;
     font-size: 90px;
     color: white;
-    transition: all .2s ease-in-out;
+    transition: transform .2s ease-in-out;
+    animation: enable 3s linear;
   }
 
   #landing-icon:hover { 
     transform: scale(1.1); 
+  }
+
+  
+  @keyframes enable { 
+    0% { 
+      opacity: 0; 
+      transform: translateX(-2000%);
+    }
+    60% {
+      opacity: 0.1; 
+      transform: translateX(-1300%);
+    }
+    70% {
+      opacity: 0.3;
+      transform: translateX(-1000%);
+    }
+    75%{
+      opacity: 0.4;
+      transform: translateX(-600%);
+    }
+    80% {
+      opacity: 0.5;
+      transform: translateX(-400%);
+    }
+    90%{
+      opacity: 0.7;
+      transform: translateX(-200%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }

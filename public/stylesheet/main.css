@@ -92,3 +92,13 @@ i{
           margin-bottom: 120px !important;
       }
   }
+
+  #index-page-images {
+      transition: all 0.15s linear;
+  }
+
+  #index-page-images:hover{
+      cursor: pointer;
+      transform: scale(1.03);
+      border-radius: 30px;
+  }  
