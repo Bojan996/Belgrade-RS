@@ -11,3 +11,5 @@ Try adding some restaurants, comments, you shall see how the app has an authoriz
 
 The point of the project is to show the logic behind the App.
 Enjoy!
+
+Btw, this was my first project ever, notice the unresponsive design, the use of ejs files and other... I purposely left all of that in order for people to see how i imporved myself with time through other projects :)
